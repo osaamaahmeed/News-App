@@ -9,7 +9,7 @@ final Dio dio = Dio();
 Future<List<NewsModel>> getNews ({required String category}) async {
 
   try {
-  Response res = await dio.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=5ebe10b447d54e90851255adcade7019&category=$category");
+  Response res = await dio.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=You rAPIKey&category=$category");
   Map<String, dynamic> jsonData = res.data;
   List<dynamic> articles = jsonData['articles'];
   // if (res.statusCode == 403) {return NewsModel(img: "assetss/news1.jpeg", title: articles['title'], subTitle: articles['descptiom']);}
