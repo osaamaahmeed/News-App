@@ -60,10 +60,12 @@ Response Handling:
   ```dart
 // Example using Dio
 Future<List<NewsModel>> fetchNews() async {
-  final response = await Dio().get('https://api.example.com/news');
+  final response = await Dio().get('https://newsapi.org/v2/top-headlines?country=us&apiKey=YourAPIKey&category=$category');
   return (response.data as List).map((e) => NewsModel.fromJson(e)).toList();
 }
   ```
+**Note: Don't forget to use your API Key**
+
 JSON Parsing: Convert API responses to Dart objects using factory constructors:
   ``` dart
 factory NewsModel.fromJson(Map<String, dynamic> json) {
